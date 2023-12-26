@@ -1,0 +1,15 @@
+[package]
+name = "testjemalloc"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.release-with-debug]
+inherits = "release"
+debug = "full"
+split-debuginfo = "packed"
+
+[dependencies]
+tikv-jemallocator = "0.5"
+tikv-jemalloc-ctl = {version = "0.5", features = ["use_std"]}
